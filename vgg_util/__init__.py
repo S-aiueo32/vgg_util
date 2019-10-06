@@ -120,7 +120,7 @@ class VGG(nn.Module):
             The dictionary of tensors you specified.
         """
 
-        assert torch.all(x > 0.) and torch.all(x < 1.),\
+        assert torch.all(x >= 0.) and torch.all(x <= 1.),\
             'Normalize tensor to [0, 1]'
         assert all([t in self.names for t in targets]),\
             'Specified name does not exist.'
