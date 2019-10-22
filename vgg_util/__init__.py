@@ -1,5 +1,5 @@
 from collections import OrderedDict
-import warning
+import warnings
 
 import torch
 import torch.nn as nn
@@ -126,7 +126,7 @@ class VGG(nn.Module):
         # assert torch.all(x >= 0.) and torch.all(x <= 1.),\
         #     'Normalize tensor to [0, 1]'
         if torch.all(x >= 0.) and torch.all(x <= 1.):
-            warning.warn('input tensor is not normalize to [0, 1].')
+            warnings.warn('input tensor is not normalize to [0, 1].')
 
         x = self.z_score(x)
 
